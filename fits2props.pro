@@ -218,7 +218,7 @@ pro fits2props, filename, props = mad_props, gal = gal, show = show $
 
 ; Explore BMFRIENDS beams in every direction if BMFRIEND is set for
 ; initial guess at local maxima. Default to searching 3x3 in beams
-  if n_elements(bmfriends) gt 0 then bmfriends = 1
+  if n_elements(bmfriends) eq 0 then bmfriends = 1
 ; if FRIENDS is set, give it priority over BMFRIENDS
   if n_elements(friends) eq 0 then $
     friends = ceil(sqrt(ppbeam/!pi > 1)*bmfriends/2)
